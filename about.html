@@ -1,0 +1,298 @@
+-<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About - समर्थ नगरी | Guild Developers</title>
+<meta name="description" content="Guild Developers and the vision behind समर्थ नगरी, a gated plotted community in Katta, Malvan, Sindhudurg.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --tide: #14322E; --tide-deep: #0D2320; --tide-light: #1F4B44;
+  --laterite: #A6472B; --laterite-light: #C15F3F;
+  --limewash: #F5EFE1; --limewash-dim: #ECE1C9;
+  --monsoon: #4B6558; --sand: #D9C9A6; --ink: #211D18; --white: #FFFFFF;
+  --font-display: "Fraunces", ui-serif, Georgia, serif;
+  --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --container: 1180px; --edge: clamp(20px, 5vw, 64px);
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+}
+body { margin: 0; font-family: var(--font-body); color: var(--ink); background: var(--limewash); line-height: 1.65; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+ul { list-style: none; margin: 0; padding: 0; }
+button { font-family: inherit; font-size: inherit; cursor: pointer; border: none; background: none; }
+h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; line-height: 1.08; margin: 0; color: var(--tide); letter-spacing: -0.01em; }
+p { margin: 0; }
+:focus-visible { outline: 2px solid var(--laterite); outline-offset: 3px; }
+.h1 { font-size: clamp(2.4rem, 5.2vw, 4rem); }
+.h2 { font-size: clamp(2rem, 4.2vw, 3.1rem); }
+.h3 { font-size: clamp(1.3rem, 2.4vw, 1.7rem); font-weight: 600; }
+.lede { font-size: clamp(1.05rem, 1.6vw, 1.25rem); line-height: 1.6; color: var(--tide); opacity: 0.85; }
+.eyebrow { font-family: var(--font-body); font-size: 0.78rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.16em; color: var(--laterite); display: inline-flex; align-items: center; gap: 10px; margin: 0 0 16px; }
+.eyebrow::before { content: ""; width: 28px; height: 1px; background: var(--laterite); }
+.eyebrow.on-dark { color: #E3B89E; }
+.eyebrow.on-dark::before { background: #E3B89E; }
+.container { max-width: var(--container); margin: 0 auto; padding: 0 var(--edge); }
+.section { padding: clamp(64px, 9vw, 120px) 0; }
+.bg-tide { background: var(--tide); color: var(--limewash); }
+.bg-tide h1, .bg-tide h2, .bg-tide h3 { color: var(--white); }
+.bg-limewash { background: var(--limewash); }
+.grid { display: grid; gap: clamp(20px, 3vw, 40px); }
+.grid-3 { grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 880px) { .grid-3 { grid-template-columns: 1fr; } }
+.btn { display: inline-flex; align-items: center; gap: 10px; padding: 15px 30px; font-size: 0.95rem; font-weight: 600; letter-spacing: 0.01em; border-radius: 3px; transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease; white-space: nowrap; }
+.btn-primary { background: var(--laterite); color: var(--white); }
+.btn-primary:hover { background: var(--laterite-light); transform: translateY(-2px); }
+.btn-outline { background: transparent; color: var(--limewash); border: 1px solid rgba(245,239,225,0.45); }
+.btn-outline:hover { background: rgba(245,239,225,0.1); border-color: var(--limewash); transform: translateY(-2px); }
+.btn-row { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
+.site-header { position: fixed; top: 0; left: 0; right: 0; z-index: 200; display: flex; align-items: center; justify-content: space-between; padding: 26px var(--edge); transition: background 0.35s ease, padding 0.35s ease, box-shadow .35s ease; }
+.site-header.solid, .site-header.is-scrolled { background: var(--tide-deep); padding-top: 16px; padding-bottom: 16px; box-shadow: 0 6px 24px rgba(9,20,18,0.25); }
+.brand { display: flex; flex-direction: column; line-height: 1.1; }
+.brand-mark { font-family: var(--font-display); font-size: 1.35rem; font-weight: 600; color: var(--white); letter-spacing: 0.01em; }
+.brand-sub { font-size: 0.66rem; text-transform: uppercase; letter-spacing: 0.14em; color: var(--sand); margin-top: 3px; }
+.nav-links { display: flex; align-items: center; gap: 38px; }
+.nav-links a { font-size: 0.88rem; font-weight: 500; color: var(--limewash); opacity: 0.85; position: relative; padding: 4px 0; }
+.nav-links a:hover { opacity: 1; }
+.nav-links a.active { opacity: 1; }
+.nav-links a.active::after { content: ""; position: absolute; left: 0; right: 0; bottom: -4px; height: 2px; background: var(--laterite-light); }
+.nav-cta { display: flex; align-items: center; gap: 18px; }
+.nav-toggle { display: none; flex-direction: column; gap: 5px; width: 26px; z-index: 210; }
+.nav-toggle span { display: block; height: 2px; background: var(--white); border-radius: 2px; transition: transform .3s ease, opacity .3s ease; }
+.nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-toggle.open span:nth-child(2) { opacity: 0; }
+.nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+@media (max-width: 920px) {
+  .nav-links { position: fixed; inset: 0; background: var(--tide-deep); flex-direction: column; justify-content: center; gap: 34px; transform: translateX(100%); transition: transform .4s ease; }
+  .nav-links.open { transform: translateX(0); }
+  .nav-links a { font-size: 1.4rem; }
+  .nav-toggle { display: flex; }
+  .nav-cta .btn-outline { display: none; }
+}
+.page-hero { position: relative; padding: 168px 0 90px; color: var(--white); background: linear-gradient(160deg, var(--tide) 0%, var(--tide-deep) 100%); overflow: hidden; }
+.page-hero h1 { color: var(--white); }
+.page-hero .lede { color: var(--limewash); opacity: 0.85; max-width: 60ch; margin-top: 18px; }
+.tide-divider { position: relative; line-height: 0; }
+.tide-divider svg { width: 100%; height: clamp(30px, 5vw, 54px); display: block; }
+.card { background: var(--white); border: 1px solid var(--sand); padding: clamp(28px, 3vw, 40px); border-radius: 3px; }
+.card .eyebrow { margin-bottom: 12px; }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(30px, 5vw, 70px); align-items: center; }
+@media (max-width: 880px) { .two-col { grid-template-columns: 1fr; } }
+.img-wrap { position: relative; overflow: hidden; background: linear-gradient(135deg, var(--tide) 0%, var(--laterite) 150%); }
+.img-wrap img { width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; transition: opacity .25s ease; }
+.img-wrap.loaded-fail img { opacity: 0; }
+.fact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 26px 40px; margin-top: 32px; }
+.fact-grid dt { font-size: 0.76rem; text-transform: uppercase; letter-spacing: 0.1em; color: #E3B89E; margin-bottom: 6px; }
+.fact-grid dd { font-size: 1.02rem; color: var(--white); margin: 0; }
+.cta-banner { background: var(--laterite); color: var(--white); padding: clamp(56px, 8vw, 90px) 0; text-align: center; }
+.cta-banner h2 { color: var(--white); max-width: 20ch; margin: 0 auto; }
+.cta-banner .lede { color: var(--white); opacity: 0.9; margin: 16px auto 30px; }
+.cta-banner .btn-row { justify-content: center; }
+.cta-banner .btn-primary { background: var(--tide-deep); }
+.cta-banner .btn-primary:hover { background: var(--tide); }
+.site-footer { background: var(--tide-deep); color: var(--limewash); padding: 70px 0 30px; }
+.footer-top { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 40px; padding-bottom: 50px; border-bottom: 1px solid rgba(245,239,225,0.12); }
+.footer-top h4 { color: var(--white); font-family: var(--font-body); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 18px; }
+.footer-top p, .footer-top a { font-size: 0.9rem; color: var(--limewash); opacity: 0.75; }
+.footer-top li { margin-bottom: 10px; }
+.footer-top a:hover { opacity: 1; }
+.footer-brand p { max-width: 32ch; opacity: 0.65; margin-top: 14px; font-size: 0.88rem; }
+.footer-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 26px; flex-wrap: wrap; gap: 12px; }
+.footer-bottom p { font-size: 0.78rem; opacity: 0.5; }
+.social-row { display: flex; gap: 16px; }
+.social-row a { width: 34px; height: 34px; border: 1px solid rgba(245,239,225,0.25); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+.social-row svg { width: 15px; height: 15px; stroke: var(--limewash); }
+@media (max-width: 880px) { .footer-top { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 540px) { .footer-top { grid-template-columns: 1fr; } }
+.wa-float { position: fixed; right: 22px; bottom: 22px; z-index: 150; width: 58px; height: 58px; border-radius: 50%; background: #2E5C4C; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 24px rgba(13,35,32,0.35); transition: transform .25s ease; }
+.wa-float:hover { transform: scale(1.07); }
+.wa-float svg { width: 26px; height: 26px; fill: var(--white); }
+.reveal { opacity: 0; transform: translateY(18px); transition: opacity .7s ease, transform .7s ease; }
+.reveal.in { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<a href="https://wa.me/918080779060" class="wa-float" aria-label="Chat on WhatsApp" target="_blank" rel="noopener">
+  <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.29-1.39a9.9 9.9 0 0 0 4.75 1.21h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01A9.86 9.86 0 0 0 12.04 2zm5.83 14.06c-.24.68-1.4 1.32-1.94 1.4-.5.08-1.12.11-1.81-.12-.42-.13-.95-.31-1.64-.6-2.9-1.25-4.79-4.17-4.94-4.36-.14-.2-1.18-1.57-1.18-3 0-1.42.75-2.12 1.01-2.41.26-.29.58-.36.77-.36h.55c.18 0 .42-.07.65.5.24.58.81 2 .88 2.15.07.15.12.32.02.51-.09.2-.14.32-.28.49-.14.17-.29.38-.42.51-.14.14-.29.29-.12.58.17.29.75 1.24 1.62 2.01 1.11.99 2.05 1.3 2.34 1.44.29.15.46.13.63-.07.17-.2.72-.84.91-1.13.19-.29.38-.24.63-.14.26.1 1.64.77 1.92.91.28.15.47.22.53.34.07.13.07.72-.17 1.4z"/></svg>
+</a>
+
+<header class="site-header solid">
+  <a href="index.html" class="brand">
+    <span class="brand-mark">समर्थ नगरी</span>
+    <span class="brand-sub">by Guild Developers</span>
+  </a>
+  <nav class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="about.html" class="active">About</a>
+    <a href="offerings.html">Plots &amp; Homes</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <div class="nav-cta">
+    <a href="contact.html" class="btn btn-outline">Book a Site Visit</a>
+    <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<section class="page-hero">
+  <div class="container">
+    <p class="eyebrow on-dark">About</p>
+    <h1 class="h1">Built by people who live here too</h1>
+    <p class="lede">Guild Developers plans communities the way we'd want to buy into one ourselves — surveyed honestly, built properly, and rooted in the place they sit.</p>
+  </div>
+  <div class="tide-divider" aria-hidden="true">
+    <svg viewBox="0 0 1200 60" preserveAspectRatio="none"><path d="M0,32 C150,58 330,4 600,28 C870,52 1040,10 1200,34 L1200,60 L0,60 Z" fill="Transparent"/></svg>
+  </div>
+</section>
+
+<section class="section bg-limewash">
+  <div class="container">
+    <p class="eyebrow">The Developer</p>
+    <h2 class="h2" style="max-width: 22ch;">Guild Developers</h2>
+    <p class="lede" style="margin-top:20px; max-width: 70ch;">A guild is a group of people who hold each other to the same standard — that's the idea behind the name. Architects, surveyors, and builders working to one measure of quality, not cutting corners between a brochure and a handover. We plan plotted communities on the Konkan coast, where land is still honest and a plot boundary means what it says.</p>
+    <div class="grid grid-3" style="margin-top:50px;">
+      <div class="card reveal">
+        <p class="eyebrow">01</p>
+        <h3 class="h3">Clear Title, Every Time</h3>
+        <p style="margin-top:12px; color:var(--monsoon);">Every plot is surveyed and documented before it's offered for sale — no ambiguity about what you're buying.</p>
+      </div>
+      <div class="card reveal">
+        <p class="eyebrow">02</p>
+        <h3 class="h3">Built to Live In</h3>
+        <p style="margin-top:12px; color:var(--monsoon);">Roads, drainage, and power go in before the marketing does. What you see on a site visit is what you get.</p>
+      </div>
+      <div class="card reveal">
+        <p class="eyebrow">03</p>
+        <h3 class="h3">Present After the Sale</h3>
+        <p style="margin-top:12px; color:var(--monsoon);">We're a phone call away long after the booking amount is paid, not just before it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-tide">
+  <div class="container">
+    <div class="two-col reveal">
+      <div>
+        <p class="eyebrow on-dark">The Project</p>
+        <h2 class="h2" style="color:#fff;">समर्थ नगरी</h2>
+        <p class="lede" style="margin-top:20px; color:#fff; opacity:.85;">Samarth means capable, self-sufficient — the idea behind this community. You hold the plan: build a home exactly as you've imagined it, or move into one that's already standing. Set in Katta on the outskirts of Malvan, समर्थ नगरी is a single gated layout of plots and ready homes, planned as one community rather than a patchwork of individual sales.</p>
+        <dl class="fact-grid">
+          <div><dt>Location</dt><dd>Katta, Malvan, Sindhudurg, MH</dd></div>
+          <div><dt>Community Type</dt><dd>Gated, plotted development</dd></div>
+          <div><dt>Offering</dt><dd>Surveyed plots &amp; ready-built homes</dd></div>
+          <div><dt>Status</dt><dd>Phase 1: In Progress</dd></div>
+        </dl>
+      </div>
+      <div class="img-wrap reveal" style="aspect-ratio: 4/5; border-radius: 2px;">
+        <img src="https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=900&q=80" alt="Aerial pattern of surveyed land plots" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-limewash">
+  <div class="container">
+    <div class="two-col reveal">
+      <div class="img-wrap" style="aspect-ratio: 4/3; border-radius: 2px; order: 2;">
+        <img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&fit=crop&w=900&q=80" alt="Fishing boats along the Konkan coastline" loading="lazy">
+      </div>
+      <div>
+        <p class="eyebrow">Why Here</p>
+        <h2 class="h2">The Konkan coast, at a human pace</h2>
+        <p class="lede" style="margin-top:20px;">Malvan means Sindhudurg Fort, Malvani fish curry, and beaches that haven't been overrun. It's close enough to Mumbai and Pune for a long weekend, and quiet enough that a long weekend is enough to decompress.</p>
+        <p class="lede" style="margin-top:14px;">For a growing number of buyers, that's exactly the point — not a second home you visit once a year and forget, but a place you love going back to.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-banner">
+  <div class="container">
+    <h2 class="h2">See the plots for yourself</h2>
+    <p class="lede">No pressure, no obligation — just a walk through the land and an honest conversation.</p>
+    <div class="btn-row">
+      <a href="contact.html" class="btn btn-primary">Schedule a Site Visit</a>
+      <a href="offerings.html" class="btn btn-outline">View Plots &amp; Homes</a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <span class="brand-mark" style="font-size:1.15rem;">समर्थ नगरी</span>
+        <p>A Guild Developers project — a gated, plotted community in Katta, Malvan, Sindhudurg.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="offerings.html">Plots &amp; Homes</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+918080779060">+91 80807 79060</a></li>
+          <li><a href="mailto:sales@guilddevelopers.in">sales@guilddevelopers.in</a></li>
+          <li>Katta, Malvan, Sindhudurg, MH 416604</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Follow</h4>
+        <div class="social-row">
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.5"><path d="M15 4h-2a4 4 0 00-4 4v3H6v4h3v7h4v-7h3l1-4h-4V8a1 1 0 011-1h3z"/></svg></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Guild Developers.</p>
+      <p>Design placeholder — photos and copy to be replaced with final content.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  var toggle = document.querySelector('.nav-toggle');
+  var links = document.querySelector('.nav-links');
+  if (toggle && links) {
+    toggle.addEventListener('click', function () {
+      toggle.classList.toggle('open');
+      links.classList.toggle('open');
+    });
+    links.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () { toggle.classList.remove('open'); links.classList.remove('open'); });
+    });
+  }
+  document.querySelectorAll('.img-wrap img').forEach(function (img) {
+    img.addEventListener('error', function () { img.closest('.img-wrap').classList.add('loaded-fail'); });
+  });
+  var revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window && revealEls.length) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) { entry.target.classList.add('in'); io.unobserve(entry.target); }
+      });
+    }, { threshold: 0.15 });
+    revealEls.forEach(function (el) { io.observe(el); });
+  } else {
+    revealEls.forEach(function (el) { el.classList.add('in'); });
+  }
+});
+</script>
+</body>
+</html>
