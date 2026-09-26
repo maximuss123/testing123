@@ -84,6 +84,20 @@ p { margin: 0; }
   .nav-toggle { display: flex; }
   .nav-cta .btn-outline { display: none; }
 }
+
+.grid-3 { grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 880px) { .grid-3 { grid-template-columns: 1fr; } }
+.media-card { display: block; background: var(--white); border: 1px solid var(--sand); padding: 26px 24px; border-radius: 3px; transition: transform .25s ease, box-shadow .25s ease; }
+.media-card:hover { transform: translateY(-3px); box-shadow: 0 10px 24px rgba(20,50,46,0.1); }
+.media-tag { display: inline-block; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600; color: var(--laterite); background: var(--limewash-dim); padding: 4px 10px; border-radius: 20px; margin-bottom: 14px; }
+.media-card h3 { margin-top: 0; }
+.media-source { font-size: 0.85rem; color: var(--monsoon); margin-top: 10px; }
+.location-map-wrap { background: var(--white); border: 1px solid var(--sand); padding: clamp(20px,3vw,44px); border-radius: 3px; }
+.layout-map-zoom { display: block; position: relative; overflow: hidden; border-radius: 2px; cursor: zoom-in; background: var(--limewash-dim); }
+.layout-map-zoom img { display: block; width: 100%; height: auto; transition: transform 0.25s ease-out; transform-origin: 50% 50%; will-change: transform; }
+.layout-map-zoom.zoomed img { transform: scale(2.4); }
+.layout-map-hint { position: absolute; right: 14px; bottom: 14px; background: rgba(20,50,46,0.85); color: var(--limewash); font-size: 0.72rem; letter-spacing: 0.03em; padding: 7px 12px; border-radius: 20px; pointer-events: none; z-index: 2; }
+ 
 .hero { position: relative; min-height: 100svh; display: flex; align-items: center; color: var(--white); overflow: hidden; }
 .hero-media { position: absolute; inset: 0; background: linear-gradient(160deg, var(--tide) 0%, var(--monsoon) 130%); }
 .hero-media img { width: 100%; height: 100%; object-fit: cover; opacity: 0.55; position: absolute; inset: 0; }
@@ -190,12 +204,12 @@ p { margin: 0; }
         <h2 class="h2">Planned with nature, not against it</h2>
         <p class="lede" style="margin-top:20px;">Set in Katta, on the outskirts of Malvan, समर्थ नगरी is laid out around the rhythm of Nature — laterite earth, green cover, and a short drive to the bustling Beaches. Roads, drainage and power are in before a single family moves in.</p>
       </div>
-      <div class="stat-row">
-        <div><div class="stat-num">10 km</div><div class="stat-label">to Malvan town</div></div>
-        <div><div class="stat-num">17 km</div><div class="stat-label">to Sindhudurg Fort</div></div>
-        <div><div class="stat-num">17 km</div><div class="stat-label">to Tarkarli Beach</div></div>
-        <div><div class="stat-num">24×7</div><div class="stat-label">gated security</div></div>
-      </div>
+     <div class="stat-row">
+  <div><div class="stat-num">18 km</div><div class="stat-label">to Malvan (25 min)</div></div>
+  <div><div class="stat-num">12 km</div><div class="stat-label">to Sindhudurg Railway (18 min)</div></div>
+  <div><div class="stat-num">25 km</div><div class="stat-label">to Tarkarli Beach (35 min)</div></div>
+  <div><div class="stat-num">23 km</div><div class="stat-label">to Chipi Airport (40 min)</div></div>
+</div>
     </div>
   </div>
 </section>
@@ -266,9 +280,39 @@ p { margin: 0; }
         <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=1000&q=80" alt="Palm-lined coastline typical of the Konkan coast" loading="lazy">
       </div>
     </div>
+    <div class="location-map-wrap reveal" style="margin-top:40px;">
+  <a class="layout-map-zoom" id="locationMapZoom" href="asset/marketing-map.png" target="_blank" rel="noopener" aria-label="Open the full-size location map in a new tab">
+    <img src="asset/marketing-map.png" alt="Map of Samarth Nagari showing drive times to Katta Bajar Peth, Angnewadi Temple, Chipi Airport, Malvan, Sindhudurg Railway Station, and Tarkarli Beach" loading="lazy">
+    <span class="layout-map-hint">Hover to zoom · Click for full size</span>
+  </a>
+</div>
   </div>
 </section>
-
+  
+<section class="section bg-limewash">
+  <div class="container">
+    <p class="eyebrow">In the News</p>
+    <h2 class="h2" style="max-width: 22ch;">Where Samarth Nagari has been featured</h2>
+    <div class="grid grid-3" style="margin-top:50px;">
+      <a href="#" target="_blank" rel="noopener" class="media-card reveal">
+        <span class="media-tag">Article</span>
+        <h3 class="h3" style="font-size:1.1rem;">[Publication name] — headline goes here</h3>
+        <p class="media-source">via [Publication name]</p>
+      </a>
+      <a href="#" target="_blank" rel="noopener" class="media-card reveal">
+        <span class="media-tag">Video</span>
+        <h3 class="h3" style="font-size:1.1rem;">[Channel name] — video title goes here</h3>
+        <p class="media-source">via YouTube</p>
+      </a>
+      <a href="#" target="_blank" rel="noopener" class="media-card reveal">
+        <span class="media-tag">Press</span>
+        <h3 class="h3" style="font-size:1.1rem;">[Publication name] — headline goes here</h3>
+        <p class="media-source">via [Publication name]</p>
+      </a>
+    </div>
+  </div>
+</section>
+  
 <section class="cta-banner">
   <div class="container">
     <h2 class="h2">Walk the land before you decide</h2>
